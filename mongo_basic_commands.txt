@@ -25,3 +25,50 @@ db.person.find().pretty()
 
 //Clean MongoDB Terminal
 cls
+
+//Show Collections
+show Collections
+
+//Delete/Drop Collections
+db.pesron.drop()
+
+//Insert Multiple Data
+db.person.insert(
+    [
+        {
+            name: "John",
+            age: 30
+        },
+        {
+            name: "Mary",
+            age: 27
+        },
+        {
+            name: "Ana",
+            age: 21
+        }
+    ]
+)
+
+//Update Data (careful)(Overwrite)
+db.person.update(
+    {_id: ObjectId("5fa3ef16929bb20370e90f1a")},
+    {age:25}
+)
+
+//Update that updates a data and keep the rest
+db.person.update(
+     {_id: ObjectId("5fa3ef16929bb20370e90f1a")},
+     {
+        $set: {
+         name: "Jonh"
+        }
+     }
+)
+
+//Find a data by parameter
+db.person.find(
+    {
+        name: "Jonh"
+    }
+).pretty()
