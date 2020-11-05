@@ -72,3 +72,21 @@ db.person.find(
         name: "Jonh"
     }
 ).pretty()
+
+//Sort Data - number 1 is ascending and -1 is descending sort
+db.person.find().sort(
+    {name: 1 }
+).pretty()
+
+//Limit of Results
+#limit of all Results
+db.person.find().limit(2)
+
+#limi of elements age 55
+db.person.find({age: 55}).limit(2).pretty()
+
+#limit of elements age 55 and sorted by name
+db.person.find({age: 55}).sort({name:1}).limit(2).pretty()
+
+//Get Size/ Count elements
+db.person.count()
