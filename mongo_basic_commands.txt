@@ -1,0 +1,27 @@
+// show Databases
+show dbs
+
+//Create Databases
+use people
+
+# Collections are equivilent to table in SQL language
+
+//Create a Collections
+db.createCollection("person")
+
+//Insert Data
+db.person.insert(
+    {
+        name: "Jonh",
+        age: 30
+    }
+)
+
+//Find a Data - Equivilent to SELECT * FROM person in SQL language
+db.person.find()
+
+//Display data in a better way
+db.person.find().pretty()
+
+//Clean MongoDB Terminal
+cls
