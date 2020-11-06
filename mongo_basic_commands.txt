@@ -90,3 +90,24 @@ db.person.find({age: 55}).sort({name:1}).limit(2).pretty()
 
 //Get Size/ Count elements
 db.person.count()
+
+//Add new Field to an elements
+db.person.update(
+    {_id: ObjectId("5fa3fedfeeec8e0b1195084a") },
+    {
+        $push: { kids: ["Taba", "Naruna", "Josefina"]}
+    }
+)
+
+//Unset a Field
+db.person.update(
+    {_id: ObjectId("5fa3fedfeeec8e0b1195084a") },
+    {
+        $unset: {surname: ""}
+    }
+)
+
+//Find based on more than one parameter
+db.person.find(
+    {name: "John", surname:"Cachumba"}
+).prett()
