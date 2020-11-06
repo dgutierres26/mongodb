@@ -111,3 +111,13 @@ db.person.update(
 db.person.find(
     {name: "John", surname:"Cachumba"}
 ).prett()
+
+//How to get all collection names
+db.getCollectionNames()
+
+//Remove an elements
+db.person.remove(
+    {
+        _id: ObjectId("5fa5381d505510292a3fc3a3")
+    }
+)
