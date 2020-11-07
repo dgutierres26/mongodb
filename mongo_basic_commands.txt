@@ -175,3 +175,65 @@ db.person.find(
         kids: {$exists: false}
     }
 )
+
+//
+db.person.find(
+    {
+        kids: {$in: ["Tom", "Peter]}
+    }
+).pretty()
+
+//Uptade  multiple elements
+db.person.update(
+    {},
+    {
+        $set: { job: "yes"}
+    },
+    {multi: true}
+)
+    or
+db.person.updateMany(
+    {},
+    {
+        $set: { job: false}
+    }
+)
+
+// Get Index
+db.person.getIndexes()
+
+db.person.createIndex(
+    {name: "text", surname: "text"}
+)
+
+db.person.find(
+    {
+       $text: {$search: "John"} 
+    }
+).pretty()
+
+// This update Overwrite the data
+db.person.update(
+    {name: "John"},
+    {
+        position: "Java Programmer"
+    }
+)
+
+// Upserts create new field or update the field
+db.person.update(
+    {_id: ObjectId("5fa3fedfeeec8e0b1195084a")},
+    {
+        name: "John",
+        surname: "Doe"
+    },
+    {upsert: true}
+)
+
+// Increment
+db.books.update(
+   {name: "Harry Potter"},
+   {
+       $inc: { likes: 1 }
+    }
+ )
