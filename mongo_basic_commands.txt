@@ -246,4 +246,6 @@ db.books.update(
     },
     { upsert: true}
  )
- 
+
+ // Delete Many
+db.books.deletreMany({}) or db.books.remove({})
