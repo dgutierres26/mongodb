@@ -61,7 +61,7 @@ db.person.update(
      {_id: ObjectId("5fa3ef16929bb20370e90f1a")},
      {
         $set: {
-         name: "Jonh"
+         name: "John"
         }
      }
 )
@@ -69,7 +69,7 @@ db.person.update(
 // Find a data by parameter
 db.person.find(
     {
-        name: "Jonh"
+        name: "John"
     }
 ).pretty()
 
@@ -79,7 +79,7 @@ db.person.find().sort(
 ).pretty()
 
 // Limit of Results
-#limit of all Results
+# limit of all Results
 db.person.find().limit(2)
 
 # Limit of elements age 55
@@ -93,7 +93,7 @@ db.person.count()
 
 // Add new Field to an elements
 db.person.update(
-    {_id: ObjectId("5fa3fedfeeec8e0b1195084a") },
+    {_id: ObjectId("5fa3ef16929bb20370e90f1a") },
     {
         $push: { kids: ["Taba", "Naruna", "Josefina"]}
     }
