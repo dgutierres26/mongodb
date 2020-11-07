@@ -237,3 +237,13 @@ db.books.update(
        $inc: { likes: 1 }
     }
  )
+
+ # Increment and Upsert
+  db.person.update(
+    {name: "John"},
+    {
+       $inc: {likes: 1 }
+    },
+    { upsert: true}
+ )
+ 
